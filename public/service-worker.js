@@ -13,7 +13,7 @@ const FILES_TO_CACHE = [
     "./icons/icon-192x192.png",
     "./icons/icon-384x384.png",
     "./icons/icon-512x512.png",
-    "./js/db.js",
+    "./js/idb.js",
     "./js/index.js"
 ];
 
@@ -75,15 +75,8 @@ self.addEventListener('fetch', function (evt) {
     }
 
     evt.respondWith(
-        fetch(evt.request).catch(function () {
-            return caches.match(evt.request).then(function (response) {
-                if (response) {
-                    return response;
-                } else if (evt.request.headers.get('accept').includes('text/html')) {
-                    // return the cached home page for all requests for html pages
-                    return caches.match('/');
-                }
-            });
+        caches.match(evt.request).then(function (response) {
+            return response || fetch(evt.request);
         })
     );
 });
