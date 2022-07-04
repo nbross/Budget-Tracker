@@ -26,8 +26,10 @@ The following commands are needed to run the app: npm i, and npm start.
 
 ## Screenshot
 
-![Social-Network-API](/assets/images/2022-06-27.png)
+![Budget-Tracker](/public/images/2022-07-04.png)
 
 ## Repo link
 
-Git Hub Repo: https://github.com/nbross/Social-Network-API
+Git Hub Repo: https://github.com/nbross/Budget-Tracker
+
+Deployed App: 
